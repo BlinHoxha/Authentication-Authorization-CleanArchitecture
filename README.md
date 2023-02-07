@@ -1,5 +1,5 @@
 # DDD.API
-**Authentication and Authorization with Identity and using DDD 5-tier layered & Onion design pattern.**
+**Authentication and Authorization with Identity and using DDD 5-tier layered & Onion design approach.**
 
 **Functionality of DDD.MVC and Tests in not included, so literally they are irrelevant and excluded from the entire solution right now (even though I include them in the solution), so the project runs in the backend without these two.** 
 
