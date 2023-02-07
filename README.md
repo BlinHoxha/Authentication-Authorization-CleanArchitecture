@@ -1,7 +1,10 @@
 # DDD.API
 **Authentication and Authorization with Identity and using DDD 5-tier layered & Onion design pattern.**
 
-**P.s New features expected to add soon.**
+**Functionality of DDD.MVC and DDD.Tests in not included, so literally they are irrelevant and excluded from the entire solution right now (even though I include them in the solution), so the project runs in the backend without these two** 
+**They will be updated and functionalized soon** 
+
+**P.s New features also expected to add soon.**
 ___
 
 ## Code-First Migration 
