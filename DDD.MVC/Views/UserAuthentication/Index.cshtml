@@ -1,0 +1,82 @@
+﻿@using DDD.Contracts.DTO.Authenticate.Incoming;
+@model IEnumerable<UserRegistrationRequestDTO>
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>Registered Users</h2>
+<a asp-action="Login" class="btn btn-sm btn-primary">Login</a>
+<a asp-action="Registration" class="btn btn-sm btn-secondary">Register</a>
+
+<div class="form-horizontal">
+    <hr />
+    <div class="form-group">
+        <table class="table table-responsive" style="width:400px">
+            <tr>
+                <th>
+                    UserName
+                </th>
+                <th>
+                    FirstName
+                </th>
+                <th>
+                    LastName
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Country
+                </th>
+                <th>
+                    Phone
+                </th>
+                <th>
+                    DateOfBirth
+                </th>
+                <th>
+                    Role
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.UserName
+                    </td>
+                    <td>
+                        @item.FirstName
+                    </td>
+                    <td>
+                        @item.LastName
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @item.Country
+                    </td>
+                    <td>
+                        @item.PhoneNumber
+                    </td>
+                    <td>
+                        @item.DateOfBirth
+                    </td>
+                    <td>
+                        @item.Role
+                    </td>
+                    <td>
+                        <a asp-action="UpdateUser">
+                            <img src="/icon/edit.png" />
+                        </a>
+                    </td>
+                    <td>
+                        <form asp-action="DeleteUser" method="post">
+                            <input type="hidden"/>
+                            <input type="image" src="/icon/close.png" />
+                        </form>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
