@@ -5,7 +5,7 @@
 
 **They will be updated and functionalized soon** 
 
-**P.s New features also expected to add soon.**
+**P.s New features also expecting to add soon.**
 ___
 
 ## Code-First Migration 
