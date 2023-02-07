@@ -1,6 +1,7 @@
 # DDD.API
-**Authentication and Authorization with Identity and using DDD 5-tier layered & Onion. P.s New features expected to add soon.**
+**Authentication and Authorization with Identity and using DDD 5-tier layered & Onion.**
 
+**P.s New features expected to add soon.
 ___
 
 ## Code-First Migration 
