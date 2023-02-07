@@ -11,20 +11,10 @@ namespace DDD.api.Controllers.v1;
 public class AuthenticationController : BaseController
 {
     private readonly IAuthenticationService _accountService;
-    private readonly ILogger<AuthenticationController> _logger;
-    private readonly RoleManager<ApplicationRole> _roleManager;
-
-    public AuthenticationController(
-        IAuthenticationService accountService,
-        ILoggerFactory loggerFactory,
-        RoleManager<ApplicationRole> roleManager
-        ) 
+    
+    public AuthenticationController(IAuthenticationService accountService) : base()
     {
         _accountService = EnsureArg.IsNotNull(accountService, nameof(accountService));
-
-        _logger = loggerFactory.CreateLogger<AuthenticationController>();
-        EnsureArg.IsNotNull(loggerFactory, nameof(loggerFactory));
-        _roleManager = roleManager;
     }
 
     [HttpPost("RegisterUser")]

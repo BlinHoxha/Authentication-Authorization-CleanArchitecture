@@ -14,17 +14,10 @@ namespace DDD.api.Controllers.v1;
 public class UsersController : BaseController
 {
     private readonly IUserService _userService;
-    private readonly ILogger<UsersController> _logger;
 
-    public UsersController(
-        IUserService userService,
-        ILoggerFactory loggerFactory
-        ) : base()
+    public UsersController(IUserService userService) : base()
     {
         _userService = EnsureArg.IsNotNull(userService, nameof(userService));
-
-        _logger = loggerFactory.CreateLogger<UsersController>();
-        EnsureArg.IsNotNull(loggerFactory, nameof(loggerFactory));
     }
 
     [HttpGet("GetUsers")]

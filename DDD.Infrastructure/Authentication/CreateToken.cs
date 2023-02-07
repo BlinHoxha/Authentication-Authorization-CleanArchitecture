@@ -13,28 +13,19 @@ namespace DDD.Infrastructure.Authentication
 {
     public class CreateToken : ICreateToken
     {
-        private readonly IConfiguration _configuration;
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<ApplicationRole> _roleManager;
-        private ApplicationUser? _user;
         private readonly JwtConfig _jwtConfig;
 
-
         public CreateToken(
-            IConfiguration configuration,
             IOptionsMonitor<JwtConfig> optionsMonitor,
             UserManager<ApplicationUser> userManager,
-            RoleManager<ApplicationRole> roleManager,
-            SignInManager<ApplicationUser> signInManager
-
+            RoleManager<ApplicationRole> roleManager
             )
         {
-            _configuration = configuration;
             _userManager = userManager;
             _roleManager = roleManager;
-            _jwtConfig = optionsMonitor.CurrentValue;
-            
+            _jwtConfig = optionsMonitor.CurrentValue;           
         }
 
         public async Task<string> CreateTokenAsync(ApplicationUser user)

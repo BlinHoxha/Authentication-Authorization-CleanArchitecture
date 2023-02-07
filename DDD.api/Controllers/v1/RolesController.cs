@@ -10,19 +10,10 @@ namespace DDD.api.Controllers.v1;
 public class RolesController : BaseController
 {
     private readonly IRoleService _roleService;
-    private readonly IUserRoleService _userRoleService;
-    private readonly ILogger<RolesController> _logger;
-    public RolesController(
-        IRoleService roleService,
-        IUserRoleService userRoleService,
-        ILoggerFactory loggerFactory
-    ) : base()
+
+    public RolesController(IRoleService roleService) : base()
     {
         _roleService = EnsureArg.IsNotNull(roleService, nameof(roleService));
-        _userRoleService = EnsureArg.IsNotNull(userRoleService, nameof(userRoleService));
-
-        _logger = loggerFactory.CreateLogger<RolesController>();
-        EnsureArg.IsNotNull(loggerFactory, nameof(loggerFactory));
     }
 
     [HttpGet("GetRoles")]

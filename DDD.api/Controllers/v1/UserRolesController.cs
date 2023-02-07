@@ -10,20 +10,12 @@ namespace DDD.api.Controllers.v1;
 [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 public class UserRolesController : BaseController
 {
-    private readonly IRoleService _roleService;
     private readonly IUserRoleService _userRoleService;
-    private readonly ILogger<UserRolesController> _logger;
-    public UserRolesController(
-        IRoleService roleService,
-        IUserRoleService userRoleService,
-        ILoggerFactory loggerFactory
-    ) : base()
-    {
-        _roleService = EnsureArg.IsNotNull(roleService, nameof(roleService));
-        _userRoleService = EnsureArg.IsNotNull(userRoleService, nameof(userRoleService));
 
-        _logger = loggerFactory.CreateLogger<UserRolesController>();
-        EnsureArg.IsNotNull(loggerFactory, nameof(loggerFactory));
+    public UserRolesController(
+        IUserRoleService userRoleService) : base()
+    {
+        _userRoleService = EnsureArg.IsNotNull(userRoleService, nameof(userRoleService));
     }
 
     [HttpGet("GetUserRolesAsync")]

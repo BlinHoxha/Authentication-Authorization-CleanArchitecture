@@ -8,22 +8,16 @@ namespace DDD.Infrastructure.Repository.Generic;
 
 public class UnitOfWork : IUnitOfWork, IDisposable
 {
+    public IUserRepository Users { get; private set; }
+
     private readonly AppDbContext _context;
     private readonly ILogger _logger;
-
-    public IUserRepository Users { get; private set; }
-    //public IRefreshTokensRepository RefreshTokens { get; private set; }
 
     public UnitOfWork(AppDbContext context, ILoggerFactory loggerFactory)
     {
         _context = context;
         _logger = loggerFactory.CreateLogger("db_logs");
-
-        Users = new UserRepository(context, _logger);
-        //RefreshTokens = new RefreshTokenRepository(context, _logger);
     }
-
-
 
     public async Task CompleteAsync()
     {

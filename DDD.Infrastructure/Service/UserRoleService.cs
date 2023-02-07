@@ -13,18 +13,14 @@ namespace DDD.Infrastructure.Service;
 public class UserRoleService : IUserRoleService
 {
     private readonly UserManager<ApplicationUser> _userManager;
-    private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly RoleManager<ApplicationRole> _roleManager;
-    private readonly IMapper _mapper;
-    private readonly AppDbContext _context;
 
-    public UserRoleService(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IMapper mapper, AppDbContext context)
+    public UserRoleService(
+        UserManager<ApplicationUser> userManager,
+        RoleManager<ApplicationRole> roleManager)
     {
         _userManager = userManager;
-        _signInManager = signInManager;
         _roleManager = roleManager;
-        _mapper = mapper;
-        _context = context;
     }
     public async Task<bool> IsInRoleAsync(Guid userId, string role)
     {
@@ -73,7 +69,6 @@ public class UserRoleService : IUserRoleService
         }
         
         var result = await _userManager.AddToRoleAsync(user, roleName);
-        await _context.SaveChangesAsync();
 
         // Check if the user is assigned to the role successfully
         if (result.Succeeded) 
@@ -116,9 +111,6 @@ public class UserRoleService : IUserRoleService
         }
 
         var result = await _userManager.RemoveFromRoleAsync(user, roleName);
-
-        await _context.SaveChangesAsync();
-
 
         if (result.Succeeded)
         {

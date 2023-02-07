@@ -9,10 +9,8 @@ namespace DDD.Infrastructure.Service;
 public class RoleService : IRoleService
     {       
         private readonly RoleManager<ApplicationRole> _roleManager;
-        public RoleService(
-            UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager,
-            RoleManager<ApplicationRole> roleManager)
+
+        public RoleService(RoleManager<ApplicationRole> roleManager)
         {
             _roleManager = roleManager;
         }
