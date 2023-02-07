@@ -10,7 +10,7 @@ ___
 
 ## Code-First Migration 
 
-Set DDD.Infrastructure as startup project and open the project with terminal, then run the following command to create the migration:
+Set **DDD.Infrastructure** as startup project and open the project with terminal, then run the following command to create the migration:
 
 ```
 dotnet ef migrations add MyMigration --startup-project "../DDD.API/DDD.api.csproj"
