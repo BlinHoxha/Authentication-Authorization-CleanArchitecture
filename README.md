@@ -1,7 +1,7 @@
 # DDD.API
 **Authentication and Authorization with Identity and using DDD 5-tier layered & Onion design approach.**
 
-**The process of authentication and authorization, which can be implemented on any type of applications, using ASP.NET Core Identity library. Besides that, the idea is to apply this process on clean architecture and well-structured design patterns.**
+**The process of authentication and authorization, which can be implemented on any type of applications, using ASP.NET Core Identity libraries. Besides that, the idea is to apply this process on clean architecture and well-structured design patterns.**
 
 **Functionality of DDD.MVC and Tests in not included, so literally they are irrelevant and excluded from the entire solution right now (even though I include them in the solution), so the project runs in the backend properly without these two.** 
 
